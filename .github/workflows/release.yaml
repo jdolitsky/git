@@ -43,6 +43,7 @@ jobs:
 
     - name: Smoke Test
       run: |
+        sudo rm -rf smoketest # TODO: remove this
         IMAGE_NAME=$(docker load < output.tar | grep "Loaded image" | sed 's/^Loaded image: //')
         IMAGE_NAME=$IMAGE_NAME ./test.sh
 
@@ -56,6 +57,7 @@ jobs:
 
     - name: Smoke Test (root)
       run: |
+        sudo rm -rf smoketest # TODO: remove this
         IMAGE_NAME=$(docker load < output.tar | grep "Loaded image" | sed 's/^Loaded image: //')
         IMAGE_NAME=$IMAGE_NAME ./test.sh
 
