@@ -6,6 +6,7 @@ IMAGE_NAME=${IMAGE_NAME:-"distroless.dev/git"}
 CLONE_URL=${CLONE_URL:-"https://github.com/distroless/git.git"}
 
 CLONEDIR="$(mktemp -d)"
+chmod go+wrx "${CLONEDIR}"
 trap "rm -rf ${CLONEDIR}" EXIT
 
 # Try cloning a repo and check for README.md
