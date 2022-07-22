@@ -26,7 +26,7 @@ jobs:
 
     - uses: distroless/actions/apko-build@main
       with:
-        config: .apko.yaml
+        config: apko.yaml
         tag: template:${{ steps.snapshot-date.outputs.date }}
 
     - name: Smoke Test
@@ -36,7 +36,7 @@ jobs:
 
     - uses: distroless/actions/apko-build@main
       with:
-        config: .apko-root.yaml
+        config: apko-root.yaml
         tag: template:root-${{ steps.snapshot-date.outputs.date }}
 
     - name: Smoke Test (root)
