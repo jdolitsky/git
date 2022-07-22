@@ -7,6 +7,7 @@ CLONE_URL=${CLONE_URL:-"https://github.com/distroless/git.git"}
 
 rm -rf smoketest
 mkdir smoketest
+chmod go+wrx smoketest
 trap "rm -rf smoketest" EXIT
 
 # Try cloning a repo and check for README.md
