@@ -8,8 +8,8 @@ CLONE_URL=${CLONE_URL:-"https://github.com/distroless/git.git"}
 CLONEDIR="$(mktemp -d)"
 chmod go+wrx "${CLONEDIR}"
 
-# TODO: re-enable this delete
-# it causes a permissions issue
+# TODO: re-enable this delete. After performing the clone
+# in some cases, this results in a "permission denied" error
 # trap "rm -rf ${CLONEDIR}" EXIT
 
 # Try cloning a repo and check for README.md
